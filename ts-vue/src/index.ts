@@ -1,22 +1,54 @@
-import Vue from "vue";
-import Hello from './components/Hello.vue';
-import EmployeeQuery from 'vue-employee-query';
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: ZhengYun
+ * @Date: 2021-01-08 09:38:00
+ * @LastEditTime: 2021-01-11 15:26:25
+ */
+// import Vue from "vue";
+// import Hello from './components/Hello.vue';
+// import EmployeeQuery from 'vue-employee-query';
 
-// let app1 = new Vue({
-//     el: '.app',
-//     data: {
-//         name: 'TypeScript'
-//     },
-//     template: `<h1>Hello {{ name }}</h1>`
-// });
+// // let app1 = new Vue({
+// //     el: '.app',
+// //     data: {
+// //         name: 'TypeScript'
+// //     },
+// //     template: `<h1>Hello {{ name }}</h1>`
+// // });
 
-// let app2 = new Vue({
+// // let app2 = new Vue({
+// //     el: '.app',
+// //     components: {
+// //         Hello
+// //     },
+// //     template: `<hello />`
+// // });
+
+// let app = new Vue({
 //     el: '.app',
 //     components: {
-//         Hello
+//         EmployeeQuery
 //     },
-//     template: `<hello />`
+//     template: `<employee-query @query="getParam" :department="department" />`,
+//     data: {
+//         department: [
+//             { department: '技术部', departmentId: 1 },
+//             { department: '产品部', departmentId: 2 },
+//             { department: '市场部', departmentId: 3 },
+//             { department: '运营部', departmentId: 4 }
+//         ]
+//     },
+//     methods: {
+//         getParam: function(param: any) {
+//             console.log(param)
+//         }
+//     }
 // });
+
+import Vue from 'vue';
+import Hello from './components/Hello.vue'
+import EmployeeQuery from 'vue-employee-query';
 
 let app = new Vue({
     el: '.app',
@@ -26,10 +58,10 @@ let app = new Vue({
     template: `<employee-query @query="getParam" :department="department" />`,
     data: {
         department: [
-            { department: '技术部', departmentId: 1 },
-            { department: '产品部', departmentId: 2 },
-            { department: '市场部', departmentId: 3 },
-            { department: '运营部', departmentId: 4 }
+            { department: '技术部', departmentId: 1},
+            { department: '产品部', departmentId: 2},
+            { department: '市场部', departmentId: 3},
+            { department: '运营部', departmentId: 4}
         ]
     },
     methods: {
